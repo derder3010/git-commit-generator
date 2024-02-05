@@ -90,7 +90,13 @@ func runGitCommand(args ...string) error {
 }
 
 func randTime(min, max time.Time) time.Time {
-	delta := max.Sub(min)
-	sec := rand.Int63n(delta.Nanoseconds())
-	return max.Add((time.Duration(sec)))
+    delta := max.Sub(min)
+    if delta <= 0 {
+        return max // Return max if min and max are the same or min is after max
+    }
+
+    maxSeconds := delta.Seconds()
+    randomSeconds := rand.Float64() * maxSeconds
+
+    return min.Add(time.Duration(int64(randomSeconds) * int64(time.Second)))
 }
