@@ -20,7 +20,7 @@ This is a simple command-line tool written in Go that generates a specified numb
 1.  **Clone the repository:**
 
     ```bash
-    git clone [https://github.com/](https://github.com/derder3010/git-commit-generator.git)
+    git clone https://github.com/derder3010/git-commit-generator.git
     cd git-commit-generator
     ```
 
