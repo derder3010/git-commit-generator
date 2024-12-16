@@ -20,7 +20,7 @@ This is a simple command-line tool written in Go that generates a specified numb
 1.  **Clone the repository:**
 
     ```bash
-    git clone [https://github.com/](https://github.com/)derder3010/git-commit-generator.git # Replace with your repo URL
+    git clone [https://github.com/](https://github.com/)<derder3010></derder3010>/git-commit-generator.git # Replace with your repo URL
     cd git-commit-generator
     ```
 
@@ -87,7 +87,7 @@ This is a simple command-line tool written in Go that generates a specified numb
 ```go
 startDate := time.Date(2019, 1, 1, 0, 0, 0, 0, time.UTC)
 ```
-    *   Change 2019 to the desired year. The month and day can also be changed if needed. For example, for March 15, 2020:
+*   Change 2019 to the desired year. The month and day can also be changed if needed. For example, for March 15, 2020:
 
 ```Go
 
