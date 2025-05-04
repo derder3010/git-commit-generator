@@ -37,15 +37,17 @@ func main() {
 	// if err := generateCommits(numCommits, startDate, endDate); err != nil {
 	// 	log.Fatal(err)
 	// }
-	now := time.Now()
-	startDate := time.Date(now.Year(), 1, 1, 0, 0, 0, 0, time.UTC)
+	// Get the beginning of the current year *at runtime*
+    now := time.Now()
+    currentYear := now.Year() // Get the current year
+    startDate := time.Date(currentYear, 1, 1, 0, 0, 0, 0, time.UTC) // Use currentYear
 
-	// Get today's date
-	endDate := time.Now()
+    // Get today's date *at runtime*
+    endDate := time.Now()
 
-	if err := generateCommits(numCommits, startDate, endDate); err != nil {
-			log.Fatal(err)
-	}
+    if err := generateCommits(numCommits, startDate, endDate); err != nil {
+        log.Fatal(err)
+    }
 }
 
 func generateCommits(numCommits int, startDate, endDate time.Time) error {
