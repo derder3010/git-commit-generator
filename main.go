@@ -21,21 +21,30 @@ func main() {
 		numCommits = n
 	}
 
-	startDate, err := time.Parse("2006-01-02", "2019-01-01")
-	if err != nil {
-		log.Fatalf("Invalid start date format: %v", err)
-	}
-	endDate, err := time.Parse("2006-01-02", "2024-12-16")
-	if err != nil {
-		log.Fatalf("Invalid end date format: %v", err)
-	}
+	// startDate, err := time.Parse("2006-01-02", "2019-01-01")
+	// if err != nil {
+	// 	log.Fatalf("Invalid start date format: %v", err)
+	// }
+	// endDate, err := time.Parse("2006-01-02", "2024-12-16")
+	// if err != nil {
+	// 	log.Fatalf("Invalid end date format: %v", err)
+	// }
 	
-	if startDate.After(endDate) {
-		log.Fatal("Start date must be before end date")
-	}
+	// if startDate.After(endDate) {
+	// 	log.Fatal("Start date must be before end date")
+	// }
+
+	// if err := generateCommits(numCommits, startDate, endDate); err != nil {
+	// 	log.Fatal(err)
+	// }
+	now := time.Now()
+	startDate := time.Date(now.Year(), 1, 1, 0, 0, 0, 0, time.UTC)
+
+	// Get today's date
+	endDate := time.Now()
 
 	if err := generateCommits(numCommits, startDate, endDate); err != nil {
-		log.Fatal(err)
+			log.Fatal(err)
 	}
 }
 
